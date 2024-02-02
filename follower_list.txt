@@ -1,0 +1,21 @@
+CREATE TABLE follower_list
+(
+	username VARCHAR(100) PRIMARY KEY,
+	fullname VARCHAR(100) NOT NULL,
+	relationship VARCHAR(50) NOT NULL
+)
+
+
+INSERT INTO follower_list 
+(username, fullname, relationship)
+VALUES
+('sunny_singh123', 'Sunny Singh', 'following'),
+('uv_07', 'Yuvraj Singh', 'following'),
+('sanskar123', 'Sanskar Sharma', 'following'),
+('priyanshu07', 'Priyanshu Singh', 'follow'),
+('gautamsingh_144', 'Gautam Singh Rajput', 'follow')
+
+
+To Retrieve all followers deatil it will run the query :-
+
+SELECT * FROM follower_list
