@@ -1,19 +1,22 @@
 CREATE TABLE follower_list
 (
-	username VARCHAR(100) PRIMARY KEY,
+	user_id INT PRIMARY KEY,
+	session_id VARCHAR(50) NOT NULL,
+	username VARCHAR(100) NOT NULL,
 	fullname VARCHAR(100) NOT NULL,
-	relationship VARCHAR(50) NOT NULL
+	relationship VARCHAR(50) NOT NULL,
+	auth_token VARCHAR(50) NOT NULL
 )
 
 
 INSERT INTO follower_list 
-(username, fullname, relationship)
+(user_id, session_id, username, fullname, relationship, auth_token)
 VALUES
-('sunny_singh123', 'Sunny Singh', 'following'),
-('uv_07', 'Yuvraj Singh', 'following'),
-('sanskar123', 'Sanskar Sharma', 'following'),
-('priyanshu07', 'Priyanshu Singh', 'follow'),
-('gautamsingh_144', 'Gautam Singh Rajput', 'follow')
+(123, 'session_1', 'sunny_singh123', 'Sunny Singh', 'following', 'token'),
+(234, 'session_2', 'uv_07', 'Yuvraj Singh', 'following', 'token'),
+(345, 'session_3', 'sanskar123', 'Sanskar Sharma', 'following', 'token'),
+(456, 'session_4', 'priyanshu07', 'Priyanshu Singh', 'follow', 'token'),
+(567, 'session_5', 'gautamsingh_144', 'Gautam Singh Rajput', 'follow', 'token')
 
 
 To Retrieve all followers deatil it will run the query :-
