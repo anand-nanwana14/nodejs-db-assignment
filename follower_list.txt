@@ -21,4 +21,5 @@ VALUES
 
 To Retrieve all followers deatil it will run the query :-
 
-SELECT * FROM follower_list
+//SELECT * FROM follower_list
+SELECT username,fullname,relationship FROM follower_list
