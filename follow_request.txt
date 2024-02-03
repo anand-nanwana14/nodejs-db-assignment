@@ -1,0 +1,21 @@
+CREATE TABLE follow_requests (
+    request_id INT PRIMARY KEY,
+    user_id INT NOT NULL,
+    session_id VARCHAR(50) NOT NULL,
+    sender_user_id INT NOT NULL,
+    status VARCHAR(50),
+    request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    auth_token VARCHAR(50) NOT NULL
+)
+
+INSERT INTO follow_requests
+(request_id, user_id, session_id, sender_user_id, status, auth_token)
+VALUES
+(1, 123, 'session_1', 234, 'pending', 'token1'),
+(2, 123, 'session_2', 345, 'pending', 'token1')
+
+//SELECT * FROM follow_requests
+
+UPDATE follow_requests
+SET status = 'accepted'
+WEHRE sender_user_id = 345
