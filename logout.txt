@@ -1,0 +1,21 @@
+CREATE TABLE logout (
+    user_id INT PRIMARY KEY,
+    session_id VARCHAR(50) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    auth_token VARCHAR(50) NOT NULL, 
+    logout_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ipaddress VARCHAR(50) NOT NULL,
+    deviceinfo TEXT NOT NULL,
+    status VARCHAR(50) NOT NULL
+)
+
+INSERT INTO logout 
+(user_id, session_id, username, auth_token, ipaddress, deviceinfo, status)
+VALUES
+(123, 'session_1', 'sunny_singh123', 'token123', '1.1.1.1', 'Android', 'Logged-out'),
+(234, 'session_2', 'uv_07', 'token234', '1.1.1.2', 'Android', 'Logged-out')
+
+//SELECT * FROM logout
+
+SELECT deviceinfo,status,logout_time FROM logout 
+WHERE user_id = 123
