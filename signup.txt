@@ -1,0 +1,20 @@
+CREATE TABLE signup (
+    user_id INT PRIMARY KEY ,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    full_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    mobile INT UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP  
+)
+
+INSERT INTO signup 
+(user_id, username, full_name, email, mobile, password)
+VALUES
+(123, 'sunny_singh123', 'Sunny Singh', 'sunny@gmail.com', 1122334455, '*******'),
+(234, 'uv_07', 'Yuvraj Singh', 'uv@gmail.com', 1223344556, '*******')\
+
+//SELECT * FROM signup
+
+SELECT register_date FROM signup
+WHERE email = 'uv@gmail.com'
