@@ -1,0 +1,29 @@
+CREATE TABLE login (
+    user_id SERIAL PRIMARY KEY,
+    session_id VARCHAR(50) NOT NULL,
+    username VARCHAR(100) NOT NULL,
+    ipaddress VARCHAR(15) NOT NULL,
+    logintime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    auth_method VARCHAR(20) NOT NULL,
+    deviceinfo TEXT NOT NULL,
+    loginstatus BOOLEAN,
+    last_login VARCHAR(50) 
+)
+
+INSERT INTO login 
+(user_id, session_id, username, ipaddress, auth_method, deviceinfo, loginstatus, last_login)
+VALUES
+(123, 'session_1', 'sunny_singh123', '1.1.1.1', '2FA', 'Android', TRUE, '1 day'),
+(234, 'session_2', 'uv_07', '1.1.1.2', 'Password', 'Android', TRUE, '6 hours'),
+(345, 'session_3', 'sanskar123', '1.1.1.3', '2FA', 'Windows', TRUE, '2 days'),
+(456, 'session_4', 'priyanshu07', '1.1.1.4', 'Password', 'Android', TRUE, '8 hours'),
+(567, 'session_5', 'gautamsingh_144', '1.1.1.1', '2FA', 'Android', TRUE, '1 day');
+
+
+// Example of 5 people logging in thier account
+
+SELECT username FROM login
+WHERE loginstatus = true
+
+
+
