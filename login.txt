@@ -1,9 +1,8 @@
 CREATE TABLE login (
-    serialid SERIAL PRIMARY KEY,
+    user_id SERIAL PRIMARY KEY,
     username VARCHAR(100) NOT NULL,
     ipaddress VARCHAR(15) NOT NULL,
     logintime TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    password VARCHAR(20) NOT NULL,
     auth_method VARCHAR(20) NOT NULL,
     deviceinfo TEXT NOT NULL,
     loginstatus BOOLEAN,
@@ -11,13 +10,13 @@ CREATE TABLE login (
 )
 
 INSERT INTO login 
-(serialid, username, ipaddress, password, auth_method, deviceinfo, loginstatus, last_login)
+(serialid, username, ipaddress, auth_method, deviceinfo, loginstatus, last_login)
 VALUES
-(1, 'sunny_singh123', '1.1.1.1', 'asdf123@', '2FA', 'Android', TRUE, '1 day'),
-(2, 'uv_07', '1.1.1.2', 'qwe123@', 'Password', 'Android', TRUE, '6 hours'),
-(3, 'sanskar123', '1.1.1.3', 'zxc@12', '2FA', 'Windows', TRUE, '2 days'),
-(4, 'priyanshu07', '1.1.1.4', 'dfg321@', 'Password', 'Android', TRUE, '8 hours'),
-(5, 'gautamsingh_144', '1.1.1.1', 'mnb122@', '2FA', 'Android', TRUE, '1 day');
+(123, 'sunny_singh123', '1.1.1.1', '2FA', 'Android', TRUE, '1 day'),
+(234, 'uv_07', '1.1.1.2', 'Password', 'Android', TRUE, '6 hours'),
+(345, 'sanskar123', '1.1.1.3', '2FA', 'Windows', TRUE, '2 days'),
+(456, 'priyanshu07', '1.1.1.4', 'Password', 'Android', TRUE, '8 hours'),
+(567, 'gautamsingh_144', '1.1.1.1', '2FA', 'Android', TRUE, '1 day');
 
 
 // Example of 5 people logging in thier account
